@@ -1,0 +1,9 @@
+{
+  "header": {
+    "response_code" : 200
+  },
+  "body": {
+    "name": "ferain",
+    "age": 30
+  }
+}
