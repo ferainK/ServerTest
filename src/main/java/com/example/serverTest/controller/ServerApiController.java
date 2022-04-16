@@ -3,6 +3,7 @@ package com.example.serverTest.controller;
 import com.example.serverTest.dto.Req;
 import com.example.serverTest.dto.User;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -19,7 +20,8 @@ public class ServerApiController {
 
 
   @PostMapping("/{userName}/{userAge}")
-  public Req<User> post(@RequestBody Req<User> user,
+  public Req<User> post(
+                        @RequestBody Req<User> user,
                         @PathVariable String userName,
                         @PathVariable String userAge,
                         @RequestHeader("x-authorization") String authorization,
@@ -35,8 +37,6 @@ public class ServerApiController {
     response.setBody(
         user.getBody()
     );
-
     return response;
-
   }
 }
